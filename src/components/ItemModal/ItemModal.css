@@ -1,0 +1,30 @@
+.modal__content_type_image {
+    padding: inherit;
+    border-radius: 20px;
+}
+
+.modal__image {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 20px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.modal__close-btn {
+    background-image: url("../../assets/close-btn.svg");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    padding: 0;
+    left: 454px;
+    top: 24px;
+}
+
+.modal__footer {
+    padding: 0 32px;
+}
