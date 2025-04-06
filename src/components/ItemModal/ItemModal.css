@@ -27,4 +27,8 @@
 
 .modal__footer {
     padding: 0 32px;
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
 }

@@ -127,12 +127,9 @@
 .modal__radio-btn {
     width: 16px;
     height: 16px;
-    cursor: pointer;
+    cursor: pointer; 
 }
 
-.modal__radio-btn:checked {
-    background-color: black;
-}
 
 .modal__submit-btn {
     background-color: rgba(0, 0, 0, 0.3);
