@@ -2,18 +2,6 @@ import { useEffect } from "react";
 import "./ItemModal.css";
 
 function ItemModal({ activeModal, onClose, card }) {
-  useEffect(() => {
-    const handleEscape = (evt) => {
-      if (evt.key === "Escape") {
-        onClose();
-      }
-    };
-
-    document.addEventListener("keydown", handleEscape);
-    return () => {
-      document.removeEventListener("keydown", handleEscape);
-    };
-  }, [onClose]);
 
   const handleOverlayClick = (evt) => {
     if (evt.target.classList.contains("modal")) {
