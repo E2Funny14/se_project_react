@@ -47,6 +47,13 @@ function App() {
     handleClose();
   };
 
+  const handleDeleteItem = (card) => {
+    setClothingItems((prevItems) =>
+      prevItems.filter((item) => item._id !== card._id)
+    );
+    handleClose();
+  };
+
   useEffect(() => {
     getWeather(coordinates, APIkey)
       .then((data) => {
@@ -86,6 +93,7 @@ function App() {
                   <Profile
                     clothingItems={clothingItems}
                     onAddItemClick={handleAddClick}
+                    onCardClick={handleCardClick}
                   />
                 }
               />
@@ -101,6 +109,7 @@ function App() {
             activeModal={activeModal}
             card={selectedCard}
             onClose={handleClose}
+            ondelete={handleDeleteItem}
           />
           <Footer />
         </div>
