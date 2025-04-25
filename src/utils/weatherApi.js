@@ -10,11 +10,15 @@ export const getWeather = ({ latitude, longitude }, APIkey) => {
       }
     })
     .then((data) => {
-      const temperature = data.main.temp;
-      const weatherType = defineWeatherType(temperature);
+      const temperatureF = Math.round(data.main.temp);
+      const temperatureC = Math.round((temperatureF - 32 * 5 / 9));
+      const weatherType = defineWeatherType(temperatureF);
       return {
         city: data.name,
-        temperature,
+        temperature: {
+          F: temperatureF,
+          C: temperatureC,
+        },
         weatherType,
       };
     });
@@ -31,11 +35,12 @@ const defineWeatherType = (temperature) => {
 };
 
 export const defineWeatherData = (data) => {
-    return {
-      city: data.city,
-      temp: {
-        F: data.temperature,
-      },
-      type: defineWeatherType(data.temperature), 
-    };
+  return {
+    city: data.city,
+    temp: {
+      F: data.temperature.F,
+      C: data.temperature.C,
+    },
+    type: defineWeatherType(data.temperature.F),
   };
+};

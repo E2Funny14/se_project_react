@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./ModalWithForm.css";
 
-function ModalWithForm({ children, buttonText, title, isOpen, onClose }) {
+function ModalWithForm({ children, buttonText, title, isOpen, onClose, onSubmit }) {
   const [selectedRadio, setSelectedRadio] = useState("");
 
   const handleOverlayClick = (evt) => {
@@ -22,7 +22,7 @@ function ModalWithForm({ children, buttonText, title, isOpen, onClose }) {
       <div className="modal__content">
         <h2 className="modal__title">{title}</h2>
         <button type="button" className="modal__close" onClick={onClose} />
-        <form className="modal__form">
+        <form onSubmit={onSubmit} className="modal__form">
           {children}
           <button type="submit" className="modal__submit-btn">
             {buttonText}
