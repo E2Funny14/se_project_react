@@ -1,62 +1,62 @@
 .toggle-switch {
-    cursor: pointer;
-    width: 56px;
-    height: 28px;
-    border: 2px solid rgba(126, 126, 126, 1);
-    border-radius: 20px;
-    margin: 0 0 0 555px;
-    overflow: hidden;
-    position: relative;
+  cursor: pointer;
+  width: 56px;
+  height: 28px;
+  border: 2px solid rgba(126, 126, 126, 1);
+  border-radius: 20px;
+  margin: 0 0 0 555px;
+  overflow: hidden;
+  position: relative;
 }
 
 .toggle-switch__checkbox {
-    opacity: 0;
+  opacity: 0;
 }
 
-.toggle-switch__circle{
-    width: 28px;
-    height: 28px;
-    background-color: black;
-    position: absolute;
-    border-radius: 50%;
-    left: 0;
-    transition: all 0.3s ease-in-out;
+.toggle-switch__circle {
+  width: 28px;
+  height: 28px;
+  background-color: black;
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  transition: all 0.3s ease-in-out;
 }
 
 .toggle-switch__text {
-    position: absolute;
-    color: white;
-    top: 5px;
+  position: absolute;
+  color: white;
+  top: 5px;
 }
 
 .toggle-switch__text_F {
-    left: 9px;
-    top: 8px;
-    font-family: "Cabinet Grotesk", sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1;
-    color: rgba(0, 0, 0, 0.5);
+  left: 9px;
+  top: 8px;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .toggle-switch__text_C {
-    right: 9px;
-    top: 8px;
-    color: rgba(0, 0, 0, 0.5);
-    font-family: "Cabinet Grotesk", sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1;
+  right: 9px;
+  top: 8px;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
 }
 
 .toggle-switch__checkbox:checked ~ .toggle-switch__circle {
-    left: 28px;
+  left: 28px;
 }
 
 .toggle-switch__checkbox:not(:checked) ~ .toggle-switch__text_F {
-    color: white;
+  color: white;
 }
 
 .toggle-switch__checkbox:checked ~ .toggle-switch__text_C {
-    color: white;
+  color: white;
 }

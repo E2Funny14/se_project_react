@@ -1,13 +1,15 @@
 import WeatherCard from "../WeatherCard/WeatherCard";
-// import { defaultClothingItems } from "../../utils/constants";
 import ItemCard from "../ItemCard/ItemCard";
 import "./Main.css";
 
-function Main({ weatherData, currentTemperatureUnit, handleCardClick, clothingItems }) {
+function Main({
+  weatherData,
+  currentTemperatureUnit,
+  handleCardClick,
+  clothingItems,
+}) {
   const temperature =
-    currentTemperatureUnit === "C"
-      ? weatherData.temp.C
-      : weatherData.temp.F;
+    currentTemperatureUnit === "C" ? weatherData.temp.C : weatherData.temp.F;
 
   return (
     <main>
@@ -17,9 +19,10 @@ function Main({ weatherData, currentTemperatureUnit, handleCardClick, clothingIt
       />
       <section className="cards">
         <p className="cards__text">
-          Today is {temperature} &deg;{currentTemperatureUnit} / You may want to wear:
+          Today is {temperature} &deg;{currentTemperatureUnit} / You may want to
+          wear:
         </p>
-        
+
         <ul className="cards__list">
           {clothingItems
             .filter((item) => {

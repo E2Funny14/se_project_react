@@ -1,4 +1,3 @@
-// import { useEffect } from "react";
 import "./ItemModal.css";
 
 function ItemModal({ activeModal, onClose, card, ondelete }) {
@@ -23,7 +22,7 @@ function ItemModal({ activeModal, onClose, card, ondelete }) {
           className="modal__close-btn"
           onClick={onClose}
         ></button>
-        <img src={card.link} alt={card.name} className="modal__image" />
+        <img src={card.imageUrl} alt={card.name} className="modal__image" />
         <div className="modal__footer">
           <p className="modal__caption">{card.name}</p>
           <p className="modal__weather">Weather: {card.weather}</p>

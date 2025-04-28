@@ -11,7 +11,7 @@ export const getWeather = ({ latitude, longitude }, APIkey) => {
     })
     .then((data) => {
       const temperatureF = Math.round(data.main.temp);
-      const temperatureC = Math.round((temperatureF - 32 * 5 / 9));
+      const temperatureC = Math.round(temperatureF - (32 * 5) / 9);
       const weatherType = defineWeatherType(temperatureF);
       return {
         city: data.name,

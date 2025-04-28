@@ -1,7 +1,14 @@
 import { useEffect, useState } from "react";
 import "./ModalWithForm.css";
 
-function ModalWithForm({ children, buttonText, title, isOpen, onClose, onSubmit }) {
+function ModalWithForm({
+  children,
+  buttonText,
+  title,
+  isOpen,
+  onClose,
+  onSubmit,
+}) {
   const [selectedRadio, setSelectedRadio] = useState("");
 
   const handleOverlayClick = (evt) => {
