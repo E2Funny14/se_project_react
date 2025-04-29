@@ -11,7 +11,7 @@ import ItemModal from "./ItemModal/ItemModal";
 import Footer from "./Footer/Footer";
 import { getWeather, defineWeatherData } from "../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
-import { getItems } from "../utils/api";
+import { getItems, addItem } from "../utils/api";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -43,15 +43,23 @@ function App() {
 
   const handleAddItemSubmit = ({ name, imageUrl, weather }) => {
     const newItem = { name, imageUrl, weather, _id: Date.now() };
-    setClothingItems([newItem, ...clothingItems]);
-    handleClose();
+    addItem(newItem)
+      .then((savedItem) => {
+        setClothingItems([savedItem, ...clothingItems]);
+        handleClose();
+      })
+      .catch(console.error);
   };
 
   const handleDeleteItem = (card) => {
+    deleteItem(card._id)
+      .then(() => {
     setClothingItems((prevItems) =>
       prevItems.filter((item) => item._id !== card._id)
-    );
+  );
     handleClose();
+  })
+      .catch(console.error);
   };
 
   useEffect(() => {

@@ -5,11 +5,7 @@ function ClothesSection({
   clothingItems,
   onAddItemClick,
   onCardClick,
-  weatherData,
 }) {
-  const filteredClothingItems = clothingItems.filter((item) => {
-    return item.weather === weatherData.type;
-  });
 
   return (
     <div className="clothes-section">
@@ -23,7 +19,7 @@ function ClothesSection({
         </button>
       </div>
       <ul className="clothes-section__list">
-        {filteredClothingItems.map((item) => (
+        {clothingItems.map((item) => (
           <ItemCard key={item._id} item={item} onCardClick={onCardClick} />
         ))}
       </ul>
