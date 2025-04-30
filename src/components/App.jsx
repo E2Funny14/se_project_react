@@ -43,7 +43,7 @@ function App() {
 
   const handleAddItemSubmit = ({ name, imageUrl, weather }) => {
     const newItem = { name, imageUrl, weather, _id: Date.now() };
-    addItem(newItem)
+    return addItem(newItem)
       .then((savedItem) => {
         setClothingItems([savedItem, ...clothingItems]);
         handleClose();
@@ -97,7 +97,6 @@ function App() {
                 element={
                   <Main
                     weatherData={weatherData}
-                    currentTemperatureUnit={currentTemperatureUnit}
                     handleCardClick={handleCardClick}
                     clothingItems={clothingItems}
                   />

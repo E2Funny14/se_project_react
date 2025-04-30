@@ -3,8 +3,14 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import avatar from "../../assets/avatar.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
+import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
+import { useContext } from "react";
 
 function Header({ handleAddClick, weatherData, onToggleUnit }) {
+  const { currentTemperatureUnit } = useContext(
+    CurrentTemperatureUnitContext
+  );
+  
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",

@@ -9,16 +9,11 @@ function ModalWithForm({
   onClose,
   onSubmit,
 }) {
-  const [selectedRadio, setSelectedRadio] = useState("");
 
   const handleOverlayClick = (evt) => {
     if (evt.target.classList.contains("modal")) {
       onClose();
     }
-  };
-
-  const handleRadioClick = (id) => {
-    setSelectedRadio((prev) => (prev === id ? "" : id));
   };
 
   return (

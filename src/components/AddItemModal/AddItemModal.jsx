@@ -22,11 +22,13 @@ const AddItemModal = ({ isOpen, onAddItemSubmit, onCloseModal }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddItemSubmit({ name, imageUrl, weather });
-    setName("");
-    setImageUrl("");
-    setWeather("");
-    onCloseModal();
+    onAddItemSubmit({ name, imageUrl, weather })
+      .then(() => {
+        setName("");
+        setImageUrl("");
+        setWeather("");
+      })
+      .catch(console.error);
   };
 
   return (
