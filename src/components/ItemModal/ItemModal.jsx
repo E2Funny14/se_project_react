@@ -1,6 +1,10 @@
 import "./ItemModal.css";
+import { useContext } from "react";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 function ItemModal({ activeModal, onClose, card, ondelete }) {
+  const currentUser = useContext(CurrentUserContext);
+
   const handleOverlayClick = (evt) => {
     if (evt.target.classList.contains("modal")) {
       onClose();
@@ -10,6 +14,9 @@ function ItemModal({ activeModal, onClose, card, ondelete }) {
   const handleDeleteClick = () => {
     ondelete(card);
   };
+
+  const isOwn = card && currentUser && card.owner === currentUser._id;
+  const itemDeleteButtonClassName = `modal__delete-btn${isOwn ? "" : " modal__delete-btn_hidden"}`;
 
   return (
     <div
@@ -28,8 +35,9 @@ function ItemModal({ activeModal, onClose, card, ondelete }) {
           <p className="modal__weather">Weather: {card.weather}</p>
           <button
             type="button"
-            className="modal__delete-btn"
+            className={itemDeleteButtonClassName}
             onClick={handleDeleteClick}
+            disabled={!isOwn}
           >
             Delete item
           </button>

@@ -131,7 +131,7 @@
 }
 
 .modal__submit-btn {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: black;
   border: none;
   width: 124px;
   height: 36px;
@@ -142,5 +142,45 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
-  letter-spacing: 0%;
+}
+
+.modal__submit-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.modal__submit-btn_active {
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+}
+
+.modal__submit-btn_active:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal__submit-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal__or-text {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__link-btn {
+  background: none;
+  border: none;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.2;
+  padding: 0;
 }

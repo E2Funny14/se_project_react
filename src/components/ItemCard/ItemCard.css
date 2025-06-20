@@ -23,3 +23,30 @@
   border: 1px solid rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
+
+.card__like-btn {
+  position: absolute;
+  top: 30px;
+  right: 111px;
+  bottom: 291px;
+  left: 194px;
+  background: url("../../assets/heart.svg") no-repeat center;
+  border: none;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.5);
+  background-color: transparent;
+  border-radius: 50%;
+  width: 30px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__like-btn:hover {
+  opacity: 0.6;
+}
+
+.card__like-btn_active {
+  background: url("../../assets/heart-liked.svg") no-repeat center;
+}

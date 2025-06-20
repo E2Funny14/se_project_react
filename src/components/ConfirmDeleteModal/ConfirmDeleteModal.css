@@ -1,0 +1,70 @@
+.modal__content_delete {
+    max-width: 670px;
+    height: 280px;
+    padding: 40px 151px 0 151px;
+}
+
+.modal__close {
+  position: absolute;
+  padding: 0;
+  top: 20px;
+  right: 28px;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-image: url("../../assets/weather-close.svg");
+  background-repeat: no-repeat;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.modal__title_delete {
+    padding: 20px 0 40px;
+    width: 403px;
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    text-align: center;
+    position: relative;
+    left: -20px;
+}
+
+.modal__submit-section_delete {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-direction: column;
+}
+
+.modal__submit-btn_delete {
+    color: red;
+    font-family: "Cabinet Grotesk", sans-serif;
+    cursor: pointer;
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    border: none;
+    padding: 0;
+    width: auto;
+}
+
+.modal__submit-btn_active_delete:hover {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.modal__link-btn_delete {
+    color: rgba(0, 0, 0, 1);
+    font-family: "Cabinet Grotesk", sans-serif;
+    cursor: pointer;
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    border: none;
+    padding: 0;
+    width: auto;
+}

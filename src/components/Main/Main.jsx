@@ -8,6 +8,7 @@ function Main({
   weatherData,
   handleCardClick,
   clothingItems,
+  onCardLike,
 }) {
   
   const { currentTemperatureUnit } = useContext(
@@ -29,7 +30,8 @@ function Main({
         </p>
 
         <ul className="cards__list">
-          {clothingItems
+          {clothingItems &&
+            clothingItems
             .filter((item) => {
               return item.weather === weatherData.type;
             })
@@ -39,6 +41,7 @@ function Main({
                   key={item._id}
                   item={item}
                   onCardClick={handleCardClick}
+                  onCardLike={onCardLike}
                 />
               );
             })}

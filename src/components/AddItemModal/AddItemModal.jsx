@@ -3,7 +3,7 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./AddItemModal.css";
 import { addItem } from "../../utils/api";
 
-const AddItemModal = ({ isOpen, onAddItemSubmit, onCloseModal }) => {
+const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
   const [name, setName] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [weather, setWeather] = useState("");
@@ -22,7 +22,7 @@ const AddItemModal = ({ isOpen, onAddItemSubmit, onCloseModal }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddItemSubmit({ name, imageUrl, weather })
+    onAddItem({ name, imageUrl, weather })
       .then(() => {
         setName("");
         setImageUrl("");
@@ -103,6 +103,11 @@ const AddItemModal = ({ isOpen, onAddItemSubmit, onCloseModal }) => {
           </label>
         </div>
       </fieldset>
+      <div className="modal__submit-section">
+        <button type="submit" className="modal__submit-btn">
+          Add Garment
+        </button>
+      </div>
     </ModalWithForm>
   );
 };

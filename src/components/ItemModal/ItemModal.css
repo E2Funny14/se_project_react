@@ -48,3 +48,7 @@
   left: 320px;
   bottom: 88px;
 }
+
+.modal__delete-btn_hidden {
+  display: none;
+}

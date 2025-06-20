@@ -15,7 +15,7 @@ export const getWeather = ({ latitude, longitude }, APIkey) => {
           F: temperatureF,
           C: temperatureC,
         },
-        weatherType,
+        type: weatherType,
       };
     });
 };
