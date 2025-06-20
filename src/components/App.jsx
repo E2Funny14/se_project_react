@@ -153,14 +153,6 @@ function App() {
       })
       .catch(console.error);
   };
-  // const handleAddItemSubmit = ({ name, imageUrl, weather }) => {
-  //   return addItem({ name, imageUrl, weather })
-  //     .then((savedItem) => {
-  //       setClothingItems([savedItem, ...clothingItems]);
-  //       handleClose();
-  //     })
-  //     .catch(console.error);
-  // };
 
   const handleDeleteItem = (card) => {
     deleteItem(card._id)

@@ -48,6 +48,14 @@ function EditProfileModal({ isOpen, onClose, onUpdateUser }) {
           onChange={(e) => setAvatar(e.target.value)}
         />
       </label>
+      <div className="modal__submit-section">
+        <button
+          type="submit"
+          className="modal__submit-btn"
+        >
+          Save changes
+        </button>
+      </div>
     </ModalWithForm>
   );
 }
