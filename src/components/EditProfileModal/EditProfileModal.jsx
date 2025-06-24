@@ -27,7 +27,7 @@ function EditProfileModal({ isOpen, onClose, onUpdateUser }) {
       onClose={onClose}
       onSubmit={handleSubmit}
     >
-      <label className="modal__label">
+      <label className="modal__label" htmlFor="change-name">
         Name *
         <input
           type="text"
@@ -38,7 +38,7 @@ function EditProfileModal({ isOpen, onClose, onUpdateUser }) {
           onChange={(e) => setName(e.target.value)}
         />
       </label>
-      <label className="modal__label">
+      <label className="modal__label" htmlFor="change-avatar">
         Avatar *
         <input
           type="url"
@@ -49,10 +49,7 @@ function EditProfileModal({ isOpen, onClose, onUpdateUser }) {
         />
       </label>
       <div className="modal__submit-section">
-        <button
-          type="submit"
-          className="modal__submit-btn"
-        >
+        <button type="submit" className="modal__submit-btn">
           Save changes
         </button>
       </div>

@@ -24,7 +24,7 @@ function LoginModal({ isOpen, onClose, onLogin, onRegisterClick }) {
       onClose={onClose}
       onSubmit={handleSubmit}
     >
-      <label className="modal__label">
+      <label className="modal__label" htmlFor="login-email">
         Email
         <input
           type="email"
@@ -35,7 +35,7 @@ function LoginModal({ isOpen, onClose, onLogin, onRegisterClick }) {
           onChange={(e) => setEmail(e.target.value)}
         />
       </label>
-      <label className="modal__label">
+      <label className="modal__label" htmlFor="login-password">
         Password
         <input
           type="password"

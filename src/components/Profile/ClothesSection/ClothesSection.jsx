@@ -28,7 +28,12 @@ function ClothesSection({
       </div>
       <ul className="clothes-section__list">
         {userClothingItems.map((item) => (
-          <ItemCard key={item._id} item={item} onCardClick={onCardClick} onCardLike={onCardLike} />
+          <ItemCard
+            key={item._id}
+            item={item}
+            onCardClick={onCardClick}
+            onCardLike={onCardLike}
+          />
         ))}
       </ul>
     </div>

@@ -80,13 +80,13 @@ function App() {
         if (data.token) {
           localStorage.setItem("jwt", data.token);
           setIsLoggedIn(true);
-          handleClose();
           return checkToken(data.token);
         }
       })
       .then((userData) => {
         if (userData) {
           setCurrentUser(userData);
+          handleClose();
         }
       })
       .catch((err) => {
@@ -196,7 +196,7 @@ function App() {
     }
   };
 
-   const handleCancelDelete = () => {
+  const handleCancelDelete = () => {
     setShowDeleteConfirm(false);
     setItemToDelete(null);
   };

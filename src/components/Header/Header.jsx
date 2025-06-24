@@ -7,12 +7,18 @@ import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-function Header({ handleAddClick, weatherData, onToggleUnit, isLoggedIn, onLoginClick, onRegisterClick, onLogout }) {
-  const { currentTemperatureUnit } = useContext(
-    CurrentTemperatureUnitContext
-  );
+function Header({
+  handleAddClick,
+  weatherData,
+  onToggleUnit,
+  isLoggedIn,
+  onLoginClick,
+  onRegisterClick,
+  onLogout,
+}) {
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   const currentUser = useContext(CurrentUserContext);
-  
+
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
@@ -21,14 +27,14 @@ function Header({ handleAddClick, weatherData, onToggleUnit, isLoggedIn, onLogin
   const getAvatarDisplay = () => {
     if (currentUser?.avatar) {
       return (
-        <img 
-          src={currentUser.avatar} 
-          alt={currentUser.name || "User"} 
+        <img
+          src={currentUser.avatar}
+          alt={currentUser.name || "User"}
           className="header__avatar"
           onError={(e) => {
-          e.target.onerror = null;
-          e.target.style.display = "none";
-        }} 
+            e.target.onerror = null;
+            e.target.style.display = "none";
+          }}
         />
       );
     } else if (currentUser?.name) {
@@ -38,15 +44,11 @@ function Header({ handleAddClick, weatherData, onToggleUnit, isLoggedIn, onLogin
         </div>
       );
     }
-    return (
-      <div className="header__avatar-placeholder">
-        U
-      </div>
-    );
+    return <div className="header__avatar-placeholder">U</div>;
   };
 
   return (
-     <header className="header">
+    <header className="header">
       <div></div>
       <Link to="/">
         <img className="header__logo" src={logo} alt="Logo" />
@@ -89,7 +91,6 @@ function Header({ handleAddClick, weatherData, onToggleUnit, isLoggedIn, onLogin
       )}
     </header>
   );
-
 }
 
 export default Header;

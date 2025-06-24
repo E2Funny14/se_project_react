@@ -23,18 +23,14 @@ function addItem({ name, imageUrl, weather }) {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify({
-      name: name,
-      imageUrl: imageUrl,
-      weather: weather,
-    }),
+    body: JSON.stringify({ name, imageUrl, weather }),
   }).then(checkResponse);
 }
 
 function deleteItem(id) {
   const token = localStorage.getItem("jwt");
   return fetch(`${baseUrl}/items/${id}`, {
-    method: 'DELETE',
+    method: "DELETE",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
@@ -76,4 +72,11 @@ function removeCardLike(id) {
   }).then(checkResponse);
 }
 
-export { getItems, addItem, deleteItem, updateUser, addCardLike, removeCardLike };
+export {
+  getItems,
+  addItem,
+  deleteItem,
+  updateUser,
+  addCardLike,
+  removeCardLike,
+};

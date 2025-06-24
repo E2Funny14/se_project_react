@@ -2,7 +2,15 @@ import "./Profile.css";
 import SideBar from "./SideBar/SideBar";
 import ClothesSection from "./ClothesSection/ClothesSection";
 
-function Profile({ clothingItems, onAddItemClick, onCardClick, weatherData, onEditProfileClick, onCardLike, onLogout }) {
+function Profile({
+  clothingItems,
+  onAddItemClick,
+  onCardClick,
+  weatherData,
+  onEditProfileClick,
+  onCardLike,
+  onLogout,
+}) {
   return (
     <div className="profile">
       <SideBar onEditProfileClick={onEditProfileClick} onLogout={onLogout} />

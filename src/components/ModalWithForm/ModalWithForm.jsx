@@ -9,7 +9,6 @@ function ModalWithForm({
   onClose,
   onSubmit,
 }) {
-
   const handleOverlayClick = (evt) => {
     if (evt.target.classList.contains("modal")) {
       onClose();
