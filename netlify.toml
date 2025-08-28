@@ -1,0 +1,13 @@
+# Netlify configuration
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  # Set your production API URL here
+  VITE_API_BASE_URL = "https://your-backend-api.com"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
